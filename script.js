@@ -70,13 +70,61 @@ for (const allSeats of allSeatsTogether){
         seatCount.innerText = totalSeatsAvailable;
 
         totalCost(seatPrice.innerText);
-        grandTotal()
+        grandTotal();
+      
 
         if(selectedSeats.size>=4){
             applybtn.disabled=false;
         }
+
+        
     })
 }
+
+    function floatingCardSection(){
+        const nextBtn = document.getElementById("next-button");
+        const inputs = document.getElementsByClassName("user-input");
+        const blurredBackground = document.getElementById("blurred-background");
+        const floatingCard = document.getElementById("floating-card");
+        const continueButton = document.getElementById("continue-button");
+
+        nextBtn.addEventListener("click", () => {
+
+            let inputFieldsFilled = true;
+            for (let i = 0; i < inputs.length; i++) {
+            if (inputs[i].value.trim() === "") {
+                inputFieldsFilled = false;
+               break;
+                }
+            }
+
+            if (inputFieldsFilled) {
+                blurredBackground.classList.remove("hidden");
+                floatingCard.classList.remove("hidden");
+            } 
+            else {
+                alert("Please fill all the fields before proceeding!");
+            }
+        });
+
+            
+        continueButton.addEventListener("click", () => {
+        blurredBackground.classList.add("hidden");
+        floatingCard.classList.add("hidden");
+        
+        for (let i = 0; i < inputs.length; i++) {
+            inputs[i].value = ""; // Clear the input field
+        }
+        
+        });
+
+        
+}
+
+floatingCardSection();
+
+
+
 
 function totalCost(value){
       
