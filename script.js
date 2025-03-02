@@ -115,7 +115,7 @@ for (const allSeats of allSeatsTogether){
         for (let i = 0; i < inputs.length; i++) {
             inputs[i].value = ""; // Clear the input field
         }
-        
+
         });
 
         
@@ -151,7 +151,7 @@ function grandTotal(status){
             const discountedPrice = totalCostCalculate * 0.15;
             document.getElementById("grand-total").innerText = totalCostCalculate-discountedPrice;
         }
-        else if(couponCode=="Couple20"){
+        else if(couponCode=="Couple 20"){
             const discountedPrice = totalCostCalculate * 0.2;
             document.getElementById("grand-total").innerText = totalCostCalculate-discountedPrice;
         }
